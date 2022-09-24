@@ -1,0 +1,21 @@
+body {
+    margin: 0%;
+}
+.conteudo-topo {
+    display: inline-flex;
+    background-color: #e0e0e0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.titulo {
+    align-self: center;
+}
+.titulo-topo {
+    font-size: xxx-large;
+    font-weight: bold;
+}
+.logo-topo {
+    margin-left: 1%;
+}
