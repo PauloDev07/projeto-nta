@@ -3,6 +3,8 @@
     <head>
         <title>Projeto New Tab</title>
         <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
         <header>
@@ -21,8 +23,29 @@
                 </div>
             </div>
         </header>
-        <section>
-            imagem
+
+
+        <section class="box-um" id="box-um">
+            <form>
+                <label for="transacao">Tipo de transação</label>  
+                <select id="transacao" name="transacao">
+                        <option value="compra">Selecione</option>
+                        <option value="saab">Compra</option>
+                        <option value="opel">Venda</option>
+                </select>
+
+                <label for="mercadoria">Nome da mercadoria</label>
+                <input type="text" id="mercadoria" name="mercadoria">
+
+                <label for="valor">Valor</label>
+                <input placeholder="R$ 0,00" type="number" id="valor" name="valor">
+                
+            </form>
         </section>
+
+
+
+
+
     </body>
 </html>
