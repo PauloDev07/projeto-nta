@@ -7,6 +7,7 @@
 
     </head>
     <body>
+        <!--Topo da pagina-->
         <header>
             <div class="conteudo-topo" id="cabecalho">
                 <div class="logo-topo" id="logo-topo">
@@ -24,26 +25,36 @@
             </div>
         </header>
 
-
-        <section class="box-um" id="box-um">
+        <!--Box-um para nova transação-->
+        <section class="box-um" id="box-um" name="box-um">
             <form>
-                <label for="transacao">Tipo de transação</label>  
-                <select id="transacao" name="transacao">
-                        <option value="compra">Selecione</option>
+                <div class="titulo-box-um" id="titulo-box-um">
+                    Nova Transação
+                </div>
+                <div class="elemento" id="elemento-um">
+                    <label for="transacao">Tipo de transação</label> <br>
+                    <select id="transacao" name="transacao">
                         <option value="saab">Compra</option>
                         <option value="opel">Venda</option>
-                </select>
+                    </select>
+                </div> 
 
-                <label for="mercadoria">Nome da mercadoria</label>
-                <input type="text" id="mercadoria" name="mercadoria">
+                <div class="elemento" id="elemento-dois">
+                    <label for="mercadoria">Nome da mercadoria</label> <br>
+                    <input placeholder="Mercadoria" type="text" id="mercadoria" name="mercadoria">
+                </div> 
 
-                <label for="valor">Valor</label>
+                <div class="elemento" id="elemento-tres">
+                <label for="valor">Valor</label> <br>
                 <input placeholder="R$ 0,00" type="number" id="valor" name="valor">
+                </div>
                 
+                <div>
+                <input type="button" value="Adicionar Transação" id="add"> 
+                </div>
+  
             </form>
         </section>
-
-
 
 
 

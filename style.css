@@ -1,5 +1,9 @@
 body {
     margin: 0%;
+
+
+
+
 }
 .conteudo-topo {
     display: inline-flex;
@@ -18,4 +22,36 @@ body {
 }
 .logo-topo {
     margin-left: 1%;
+    
+}
+
+
+
+.box-um {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-right: 60%;
+    padding: 1%;
+    outline: auto;
+    outline-color: rgb(133, 128, 128);
+
+}
+.titulo-box-um {
+    text-align: center;
+    font-size: large;
+    margin-bottom: 4%;
+    margin-top: 3%;
+    font-weight: bold;
+}
+#valor, #mercadoria, #transacao, #add {
+    min-width: -webkit-fill-available;
+    margin-top: 2%;
+    margin-bottom: 7%;
+}
+
+#add {
+    background-color: black;
+    color: white;
 }
