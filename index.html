@@ -3,24 +3,26 @@
     <head>
         <title>Projeto New Tab</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="table.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     </head>
+
     <body>
-        <!--Topo da pagina-->
-        <header>
+    
+    <!--Topo da pagina-->
+    
+         <header>
             <div class="conteudo-topo" id="cabecalho">
                 <div class="logo-topo" id="logo-topo">
-                    <img src="./src/logo.png"/>
+                    <img src="./src/logo.png" width="50px" height="50px">
                 </div>
                 <div class="titulo-topo">
-                    Controle Financeiro
+                    <h3>Controle Financeiro</h3>
                 </div>
+
                 <div class="container-cabecalho-menu">
-                    <ul class="cabecalho-menu">
-                        <li>Cadastro de Transações</li>
-                        <li>Limpar dados</li>
-                    </ul>
+                    <h3> Cadastro de Transações  |</h3>
+                    <h3>  Limpar dados</h3>
                 </div>
             </div>
         </header>
@@ -31,7 +33,7 @@
             <section class="box" id="box-um" name="box-um">
                 <form>
                     <div class="titulo-box" id="titulo-box-um">
-                        Nova Transação
+                        <h3>Nova Transação </h3>
                     </div>
                     <div class="elemento" id="elemento-um">
                         <label for="transacao">Tipo de transação</label> <br>
@@ -57,36 +59,38 @@
                 </form>
             </section>
 
-            <!--Box para Extrato-->
+<!--Box para Extrato-->
 
             <section class="box" id="box-dois">
-                <table class="tabela" id="tabela">
-                    <tr class="linha" id="linha-um-tabela">
-                        <td>Mercadoria</td>
-                        <td>Valor</td>
-                    </tr>
+                <h3 style="text-align: center;">Extrato de transação</h3>
+                    <table class="tabela" id="tabela">
+                        <tr class="linha" id="linha-um-tabela">
+                            <td>Mercadoria</td>
+                            <td>Valor</td>
+                        </tr>
 
-                    <tr>
-                        <td> + Lorem Ipsum is simply dummy text of the printing</td>
-                        <td>R$ 12.999,99</td>
-                    </tr>
+                        <tr>
+                            <td class="td"> + Lorem Ipsum is simply dummy text of the printing</td>
+                            <td class="td">R$ 12.999,99</td>
+                        </tr>
 
-                    <tr>
-                        <td> - Quis nostrude exercitation</td>
-                        <td>R$ 99,99</td>
-                    </tr>
+                        <tr>
+                            <td class="td"> - Quis nostrude exercitation</td>
+                            <td class="td">R$ 99,99</td>
+                        </tr>
 
-                    <tr>
-                        <td>+ Loren Ipsum</td>
-                        <td>R$ 9,99</td>
-                    </tr>
-                    
-                    <tr class="linha" id="ultima-linha-tabela">
-                        <td>Total</td>
-                        <td>12.909,99</td>
-                    </tr>
-                </table>
+                        <tr>
+                            <td class="td-2">+ Loren Ipsum</td>
+                            <td class="td-2">R$ 9,99</td>
+                        </tr>
+                        
+                        <tr class="linha" id="ultima-linha-tabela">
+                            <td>Total</td>
+                            <td>12.909,99</td>
+                        </tr>
+                    </table>
             </section>
         </main>
+
     </body>
 </html>

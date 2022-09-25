@@ -1,39 +1,44 @@
 body {
     margin: 0%;
 }
+
 main {
     display: flex;
 }
-
-
 .conteudo-topo {
     display: inline-flex;
     background-color: #e0e0e0;
     width: 100%;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
 }
 .titulo {
     align-self: center;
 }
 .titulo-topo {
-    font-size: xxx-large; 
-    font-weight: bold;
+    padding-right: 50%;
 }
 .logo-topo {
-    margin-left: 1%;
-    
+    margin-left: 50px;
+    margin-right: 50px;
 }
+.container-cabecalho-menu {
+    background-color: white;
+    border: solid 5px #e0e0e0;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
 
 
 
 #box-um {
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
-    margin-top: 5%;
-    margin-right: 20%;
+    width: 50%;
+    margin: 5%;
     padding: 1%;
     outline: auto;
     outline-color: rgb(133, 128, 128);
@@ -57,12 +62,5 @@ main {
     color: white;
 }
 #box-dois {
-
-}
-#tabela {
     width: 100%;
-}
-
-.linha {
-    font-weight: bolder;
 }

@@ -1,0 +1,23 @@
+#tabela {
+    width: 100%;
+}
+
+.linha {
+    font-weight: bolder;
+}
+
+.td {
+    border-bottom: solid 1px;
+    padding-bottom: 15px;
+}
+
+.td-2 {
+    border-bottom: double;
+    padding-bottom: 15px;
+}
+
+
+#ultima-linha-tabela {
+    padding-top: 15px;
+    border: none;
+}
