@@ -1,10 +1,11 @@
 body {
     margin: 0%;
-
-
-
-
 }
+main {
+    display: flex;
+}
+
+
 .conteudo-topo {
     display: inline-flex;
     background-color: #e0e0e0;
@@ -27,18 +28,18 @@ body {
 
 
 
-.box-um {
+#box-um {
     display: flex;
     flex-direction: column;
-    margin-left: 15%;
+    margin-left: 10%;
     margin-top: 5%;
-    margin-right: 60%;
+    margin-right: 20%;
     padding: 1%;
     outline: auto;
     outline-color: rgb(133, 128, 128);
 
 }
-.titulo-box-um {
+#titulo-box-um {
     text-align: center;
     font-size: large;
     margin-bottom: 4%;
@@ -54,4 +55,14 @@ body {
 #add {
     background-color: black;
     color: white;
+}
+#box-dois {
+
+}
+#tabela {
+    width: 100%;
+}
+
+.linha {
+    font-weight: bolder;
 }

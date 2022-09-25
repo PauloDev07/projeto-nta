@@ -25,38 +25,68 @@
             </div>
         </header>
 
-        <!--Box-um para nova transação-->
-        <section class="box-um" id="box-um" name="box-um">
-            <form>
-                <div class="titulo-box-um" id="titulo-box-um">
-                    Nova Transação
-                </div>
-                <div class="elemento" id="elemento-um">
-                    <label for="transacao">Tipo de transação</label> <br>
-                    <select id="transacao" name="transacao">
-                        <option value="saab">Compra</option>
-                        <option value="opel">Venda</option>
-                    </select>
-                </div> 
+<!--Box-um para nova transação-->
 
-                <div class="elemento" id="elemento-dois">
-                    <label for="mercadoria">Nome da mercadoria</label> <br>
-                    <input placeholder="Mercadoria" type="text" id="mercadoria" name="mercadoria">
-                </div> 
+        <main>
+            <section class="box" id="box-um" name="box-um">
+                <form>
+                    <div class="titulo-box" id="titulo-box-um">
+                        Nova Transação
+                    </div>
+                    <div class="elemento" id="elemento-um">
+                        <label for="transacao">Tipo de transação</label> <br>
+                        <select id="transacao" name="transacao">
+                            <option value="saab">Compra</option>
+                            <option value="opel">Venda</option>
+                        </select>
+                    </div> 
 
-                <div class="elemento" id="elemento-tres">
-                <label for="valor">Valor</label> <br>
-                <input placeholder="R$ 0,00" type="number" id="valor" name="valor">
-                </div>
-                
-                <div>
-                <input type="button" value="Adicionar Transação" id="add"> 
-                </div>
-  
-            </form>
-        </section>
+                    <div class="elemento" id="elemento-dois">
+                        <label for="mercadoria">Nome da mercadoria</label> <br>
+                        <input placeholder="Mercadoria" type="text" id="mercadoria" name="mercadoria">
+                    </div> 
 
+                    <div class="elemento" id="elemento-tres">
+                    <label for="valor">Valor</label> <br>
+                    <input placeholder="R$ 0,00" type="number" id="valor" name="valor">
+                    </div>
+                    
+                    <div>
+                    <input type="button" value="Adicionar Transação" id="add"> 
+                    </div>
+                </form>
+            </section>
 
+            <!--Box para Extrato-->
 
+            <section class="box" id="box-dois">
+                <table class="tabela" id="tabela">
+                    <tr class="linha" id="linha-um-tabela">
+                        <td>Mercadoria</td>
+                        <td>Valor</td>
+                    </tr>
+
+                    <tr>
+                        <td> + Lorem Ipsum is simply dummy text of the printing</td>
+                        <td>R$ 12.999,99</td>
+                    </tr>
+
+                    <tr>
+                        <td> - Quis nostrude exercitation</td>
+                        <td>R$ 99,99</td>
+                    </tr>
+
+                    <tr>
+                        <td>+ Loren Ipsum</td>
+                        <td>R$ 9,99</td>
+                    </tr>
+                    
+                    <tr class="linha" id="ultima-linha-tabela">
+                        <td>Total</td>
+                        <td>12.909,99</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
     </body>
 </html>
