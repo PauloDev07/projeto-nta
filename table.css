@@ -23,7 +23,7 @@
     padding-top: 15px;
     border: none;
 }
-footer {
+#lucro {
     text-align: right;
-    margin-right: 11%;
+    font-size: small;
 }
