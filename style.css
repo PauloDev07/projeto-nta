@@ -101,18 +101,18 @@ main {
 
 /*media screen*/
 
-
-@media only screen and (max-width: 1000px) {
+/*Tablets, ipad*/
+@media only screen and (min-width: 721px) and (max-width: 920px) {
     main {
         display: block;
 }
 
     #box-um {    
-            margin: 5%;
-            padding: 1%;
-            outline: auto;
-            outline-color: rgb(133, 128, 128);
-            width: auto;
+        margin: 5%;
+        padding: 1%;
+        outline: auto;
+        outline-color: rgb(133, 128, 128);
+        width: auto;
 }
 
     #box-dois {
@@ -123,30 +123,39 @@ main {
 }
 
     .elemento-form {
-        display: -webkit-box
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
 }
 
-    .butao {
+    .botao {
         float: right;
 }}
 
 
 
-@media only screen and (max-width: 750px) {
+
+/*Smartphone*/
+@media only screen and (max-width: 720px) {
     main {
-            display: block;
-            text-align: -webkit-center;
+        display: block;
+        text-align: -webkit-center;
     }
 
     .menu {
-    background-color: white;
-    display: inline-flex;
-    align-items: center;
+        background-color: white;
+        display: inline-flex;
+        align-items: center;
+    }
 
+    #box-dois {
+        margin: 5%;
+        display: block;
+        width: auto;
     }
 
     footer {
-            text-align: right;
-            margin-right: 5%;
+        text-align: right;
+        margin-right: 5%;
     }
 }
