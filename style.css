@@ -45,6 +45,7 @@ main {
 .menu {
     background-color: white;
     display: flex;
+    margin-right: 50px;
 }
 .menu a {
     margin-left: 5px;
@@ -94,43 +95,58 @@ main {
 #box-dois {
     width: 100%;
     margin-top: 5%;
+    margin-right: 5%;
 }
 
 
 /*media screen*/
 
-@media only screen and (max-width: 950px) {
-main {
+
+@media only screen and (max-width: 1000px) {
+    main {
         display: block;
-        text-align: -webkit-center;
 }
 
-.menu {
-background-color: white;
-display: inline-flex;
-align-items: center;
+    #box-um {    
+            margin: 5%;
+            padding: 1%;
+            outline: auto;
+            outline-color: rgb(133, 128, 128);
+            width: auto;
+}
+
+    #box-dois {
+        margin: 5%;
+        display: block;
+        width: auto;
 
 }
 
-footer {
-        text-align: right;
-        margin-right: 5%;
+    .elemento-form {
+        display: -webkit-box
 }
 
+    .butao {
+        float: right;
+}}
 
 
 
+@media only screen and (max-width: 750px) {
+    main {
+            display: block;
+            text-align: -webkit-center;
+    }
 
+    .menu {
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
 
+    }
 
-
-
-
-
-
-
-
-
-
-
+    footer {
+            text-align: right;
+            margin-right: 5%;
+    }
 }
