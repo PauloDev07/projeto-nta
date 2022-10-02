@@ -1,20 +1,6 @@
 /*importação de fonte Lato*/
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 300;
-    src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh7USSwaPGR_p.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-  
-  @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 300;
-    src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh7USSwiPGQ.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-  
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+ 
 
 /* corpo do projeto*/
 
@@ -26,6 +12,10 @@ body {
 
 main {
     display: flex;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
     
 }
 .conteudo-topo {
@@ -47,13 +37,15 @@ main {
     display: flex;
     margin-right: 50px;
 }
-.menu a {
+.barra-lateral {
+    list-style: none;
     margin-left: 5px;
     margin-right: 5px;
     text-decoration: none;
     background-color: white;
     padding: 5px;
     display: flex;
+
 }
 .botao-menu {
     background-color: transparent;
@@ -63,6 +55,10 @@ main {
     right: 21px;
     top: 2px;
     display: none;
+}
+.barra-lateral a {
+    padding: 5px;
+    text-decoration: none;
 }
 
 
@@ -146,14 +142,12 @@ main {
 
 /*media screen*/
 
-
-
 /*Tablets, ipad*/
 
 @media only screen and (min-width: 550px) and (max-width: 900px) {
     main {
         display: block;
-}
+    }
 
     .botao-menu {
         background-color: transparent;
@@ -164,10 +158,13 @@ main {
         top: 2px;
         display: flex;
         cursor: pointer;
-}
-    .menu a {
-       visibility: hidden;
-    } 
+    }
+    
+    .barra-lateral{
+        display: none;
+    }
+
+
 
     #box-um {    
         margin: 5%;
@@ -175,29 +172,25 @@ main {
         outline: auto;
         outline-color: rgb(133, 128, 128);
         width: auto;
-}
+    }
 
     #box-dois {
         margin: 5%;
         display: block;
         width: auto;
 
-}
+    }
 
     .elemento-form {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-}
+    }
 
     .botao-add {
         float: right;
+    }
 }
-
-}
-
-
-
 
 /*Smartphone*/
 @media only screen and (max-width: 549px) {
@@ -224,10 +217,7 @@ main {
         top: 2px;
         display: flex;
         cursor: pointer;
-}
-    .menu a {
-        visibility: hidden;
-}
+    }
 
     #box-dois {
         margin: 5%;
