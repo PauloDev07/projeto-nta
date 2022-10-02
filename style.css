@@ -44,13 +44,25 @@ main {
     margin-right: 50px;
 }
 .menu {
-    background-color: white;
     display: flex;
     margin-right: 50px;
 }
 .menu a {
     margin-left: 5px;
     margin-right: 5px;
+    text-decoration: none;
+    background-color: white;
+    padding: 5px;
+    display: flex;
+}
+.botao-menu {
+    background-color: transparent;
+    border: none;
+    font-size: 36px;
+    position: absolute;
+    right: 21px;
+    top: 2px;
+    display: none;
 }
 
 
@@ -143,6 +155,20 @@ main {
         display: block;
 }
 
+    .botao-menu {
+        background-color: transparent;
+        border: none;
+        font-size: 36px;
+        position: absolute;
+        right: 21px;
+        top: 2px;
+        display: flex;
+        cursor: pointer;
+}
+    .menu a {
+       visibility: hidden;
+    } 
+
     #box-um {    
         margin: 5%;
         padding: 1%;
@@ -164,9 +190,11 @@ main {
         align-items: center;
 }
 
-    .botao {
+    .botao-add {
         float: right;
-}}
+}
+
+}
 
 
 
@@ -184,10 +212,22 @@ main {
     }
 
     .menu {
-        background-color: white;
-        display: inline-flex;
-        align-items: center;
+        display: flow-root;
     }
+
+    .botao-menu {
+        background-color: transparent;
+        border: none;
+        font-size: 36px;
+        position: absolute;
+        right: 21px;
+        top: 2px;
+        display: flex;
+        cursor: pointer;
+}
+    .menu a {
+        visibility: hidden;
+}
 
     #box-dois {
         margin: 5%;
