@@ -26,6 +26,7 @@ body {
 
 main {
     display: flex;
+    
 }
 .conteudo-topo {
     display: flex;
@@ -98,11 +99,46 @@ main {
     margin-right: 5%;
 }
 
+/*tabela*/
+
+#tabela {
+    width: 100%;
+}
+
+.linha {
+    font-weight: bolder;
+    font-size: large;
+    padding-bottom: 20px;
+}
+
+.td {
+    border-bottom: solid 1px;
+    padding-bottom: 15px;
+}
+
+.td-2 {
+    border-bottom: double;
+    padding-bottom: 15px;
+}
+
+
+#ultima-linha-tabela {
+    padding-top: 15px;
+    border: none;
+}
+#lucro {
+    text-align: right;
+    font-size: small;
+}
+
 
 /*media screen*/
 
+
+
 /*Tablets, ipad*/
-@media only screen and (min-width: 721px) and (max-width: 920px) {
+
+@media only screen and (min-width: 550px) and (max-width: 900px) {
     main {
         display: block;
 }
@@ -136,7 +172,12 @@ main {
 
 
 /*Smartphone*/
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 549px) {
+    .logo-topo {
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+
     main {
         display: block;
         text-align: -webkit-center;
