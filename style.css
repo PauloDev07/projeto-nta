@@ -1,65 +1,86 @@
 /*importação de fonte Lato*/
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
  
-
 /* corpo do projeto*/
 
 
 body {
-    margin: 0%;
+    margin: 0px;
     font-family: 'Lato';
+    padding: 0px;
+    overflow: hidden;
 }
 
 main {
     display: flex;
     max-width: 1100px;
     margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    
+    padding: 20px;   
 }
+.topo {
+    direction: rtl;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    padding: 20px 5px;
+    color: white;
+    text-align: left;
+}
+a:hover {
+    background-color: rgb(189, 184, 184);
+    color: black;
+}
+ul {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    top: 25px;
+    font-size: 20px;
+    padding: 0px;
+}
+
+#imgmenu {
+    width: 40px;
+}
+#check {
+    display: none;
+}
+nav {
+    background-color: rgb(61, 61, 61);
+    height: 100%;
+    width: 350px;
+    right: -350px;
+    position: absolute;
+    transition: all .5s;
+}
+input[type="checkbox"]:checked ~ nav {
+    transform: translateX(-350px);
+}
+#menu-topo {
+    right: 20px;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+
 .conteudo-topo {
     display: flex;
     background-color: #e0e0e0;
-    width: 100%;
-    align-items: center;
     justify-content: space-between;
+    width: 100%;
+    padding-top: 0;
 }
-.titulo {
+.titulo-topo {
     align-self: center;
 }
 
 .logo-topo {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 23px;
+    align-self: center;
 }
-.menu {
-    display: flex;
-    margin-right: 50px;
-}
-.barra-lateral {
-    list-style: none;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-decoration: none;
-    background-color: white;
-    padding: 5px;
-    display: flex;
 
-}
-.botao-menu {
-    background-color: transparent;
-    border: none;
-    font-size: 36px;
-    position: absolute;
-    right: 21px;
-    top: 2px;
-    display: none;
-}
-.barra-lateral a {
-    padding: 5px;
-    text-decoration: none;
-}
 
 
 /*boxes*/
@@ -149,22 +170,13 @@ main {
         display: block;
     }
 
-    .botao-menu {
-        background-color: transparent;
-        border: none;
-        font-size: 36px;
-        position: absolute;
-        right: 21px;
-        top: 2px;
-        display: flex;
-        cursor: pointer;
+    nav {
+        width: 260px;
     }
-    
-    .barra-lateral{
-        display: none;
+    ul {
+        top: 25px;
+        font-size: 17px;
     }
-
-
 
     #box-um {    
         margin: 5%;
@@ -195,8 +207,15 @@ main {
 /*Smartphone*/
 @media only screen and (max-width: 549px) {
     .logo-topo {
-        margin-left: 20px;
+        margin-left: 10px;
         margin-right: 10px;
+        align-self: center;
+    }
+    .conteudo-topo {
+        justify-content: start;
+    }
+    nav {
+        width: 50%;
     }
 
     main {
@@ -208,25 +227,9 @@ main {
         display: flow-root;
     }
 
-    .botao-menu {
-        background-color: transparent;
-        border: none;
-        font-size: 36px;
-        position: absolute;
-        right: 21px;
-        top: 2px;
-        display: flex;
-        cursor: pointer;
-    }
-
     #box-dois {
         margin: 5%;
         display: block;
         width: auto;
-    }
-
-    footer {
-        text-align: right;
-        margin-right: 5%;
     }
 }
