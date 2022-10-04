@@ -17,11 +17,11 @@ main {
     margin: auto;
     padding: 20px;   
 }
-.topo {
+.menu1 {
     direction: rtl;
 }
 
-a {
+.amenu1 {
     text-decoration: none;
     display: block;
     padding: 20px 5px;
@@ -32,7 +32,7 @@ a:hover {
     background-color: rgb(189, 184, 184);
     color: black;
 }
-ul {
+.ulmenu1 {
     list-style: none;
     position: absolute;
     width: 100%;
@@ -47,7 +47,7 @@ ul {
 #check {
     display: none;
 }
-nav {
+#navmenu1 {
     background-color: rgb(61, 61, 61);
     height: 100%;
     width: 350px;
@@ -55,7 +55,7 @@ nav {
     position: absolute;
     transition: all .5s;
 }
-input[type="checkbox"]:checked ~ nav {
+input[type="checkbox"]:checked ~ #navmenu1 {
     transform: translateX(-350px);
 }
 #menu-topo {
@@ -74,6 +74,8 @@ input[type="checkbox"]:checked ~ nav {
 }
 .titulo-topo {
     align-self: center;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .logo-topo {
@@ -81,11 +83,36 @@ input[type="checkbox"]:checked ~ nav {
     align-self: center;
 }
 
+#menu-topo{
+    display: none;
+}
 
+#menu2 {
+    position: initial;
+    width: auto;
+    background-color: #f5f5f5;
+    height: auto;
+    transition: none;
+    margin-right: 20px;
+}
+
+.ulmenu2 {
+    display: flex;
+    list-style: none;
+    background-color: #f6f6f6;
+    padding: 15px;
+    margin-right: 10px;
+}
+.barra-lateral {
+    direction: initial;
+}
+.amenu2 {
+    color: initial;
+    padding: 15px 5px;
+    text-decoration: none;
+}
 
 /*boxes*/
-
-
 
 #box-um {
     display: flex;
@@ -116,6 +143,12 @@ input[type="checkbox"]:checked ~ nav {
     min-width: -webkit-fill-available;
     margin-top: 2%;
     margin-bottom: 7%;
+    padding: 7px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 #add {
@@ -165,21 +198,31 @@ input[type="checkbox"]:checked ~ nav {
 
 /*Tablets, ipad*/
 
-@media only screen and (min-width: 550px) and (max-width: 900px) {
+@media only screen and (min-width: 580px) and (max-width: 949px) {
+     
+    .menu2 {
+        display: none;
+    }
     main {
         display: block;
+        padding: 10px;
     }
 
-    nav {
+    #menu-topo {
+        display: initial;
+        padding: 3px;
+    }
+    
+    #navmenu1 {
         width: 260px;
     }
-    ul {
+    .ulmenu1 {
         top: 25px;
         font-size: 17px;
     }
 
     #box-um {    
-        margin: 5%;
+        margin: 2%;
         padding: 1%;
         outline: auto;
         outline-color: rgb(133, 128, 128);
@@ -187,7 +230,7 @@ input[type="checkbox"]:checked ~ nav {
     }
 
     #box-dois {
-        margin: 5%;
+        margin: 2%;
         display: block;
         width: auto;
 
@@ -205,31 +248,65 @@ input[type="checkbox"]:checked ~ nav {
 }
 
 /*Smartphone*/
-@media only screen and (max-width: 549px) {
+@media only screen and (max-width: 579px) {
+
+    .menu2 {
+        display: none;
+    }
+    #menu-topo {
+        display: initial;
+        padding: 2px;
+    }
     .logo-topo {
         margin-left: 10px;
-        margin-right: 10px;
+        margin-right: 5px;
         align-self: center;
     }
-    .conteudo-topo {
-        justify-content: start;
+
+    .titulo-topo {
+        font-size: 22px;
+        font-weight: bold;
     }
-    nav {
-        width: 50%;
+    .conteudo-topo {
+        justify-content: initial;
     }
 
+    #navmenu1 {
+        width: 50%;
+        margin-right: 5px;
+    }
+    
     main {
         display: block;
         text-align: -webkit-center;
     }
-
-    .menu {
-        display: flow-root;
+    label {
+        font-size: 15px;
     }
 
     #box-dois {
         margin: 5%;
         display: block;
         width: auto;
+    }
+
+    h1, h3 {
+        font-size: 20px;
+    }
+
+    #valor, #mercadoria, #transacao, #add {
+        padding: 5px;    
+    }
+
+    #tabela {
+        width: 90%;
+    }
+
+    #box-um {
+        width: auto;
+    }
+    
+    #titulo-box-dois {
+        font-size: 29px;
     }
 }
