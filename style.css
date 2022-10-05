@@ -17,54 +17,56 @@ main {
     margin: auto;
     padding: 20px;   
 }
-.menu1 {
+.menu {
     direction: rtl;
 }
 
-.amenu1 {
+.a-menu {
     text-decoration: none;
     display: block;
     padding: 20px 5px;
     color: white;
     text-align: left;
 }
-a:hover {
+.a-menu:hover {
     background-color: rgb(189, 184, 184);
     color: black;
 }
-.ulmenu1 {
+.ul-menu {
     list-style: none;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    top: 25px;
+    margin-top: auto;
     font-size: 20px;
     padding: 0px;
 }
 
-#imgmenu {
-    width: 40px;
-}
 #check {
     display: none;
 }
-#navmenu1 {
+.nav-menu {
     background-color: rgb(61, 61, 61);
     height: 100%;
     width: 350px;
     right: -350px;
-    position: absolute;
+    position: fixed;
     transition: all .5s;
-}
-input[type="checkbox"]:checked ~ #navmenu1 {
-    transform: translateX(-350px);
-}
-#menu-topo {
-    right: 20px;
-    padding: 15px;
-    position: absolute;
     z-index: 1;
 }
-
+input[type="checkbox"]:checked ~ .nav-menu {
+    transform: translateX(-350px);
+}
+.menu-topo {
+    right: 20px;
+    padding: 15px;
+    position: fixed;
+    z-index: 1;
+    cursor: pointer;
+}
+.fechar {
+    text-align: right;
+    padding: 15px;
+}
 .conteudo-topo {
     display: flex;
     background-color: #e0e0e0;
@@ -83,38 +85,17 @@ input[type="checkbox"]:checked ~ #navmenu1 {
     align-self: center;
 }
 
-#menu-topo{
+.menu-topo{
     display: none;
 }
 
-#menu2 {
-    position: initial;
-    width: auto;
-    background-color: #f5f5f5;
-    height: auto;
-    transition: none;
-    margin-right: 20px;
-}
-
-.ulmenu2 {
-    display: flex;
-    list-style: none;
-    background-color: #f6f6f6;
-    padding: 15px;
-    margin-right: 10px;
-}
 .barra-lateral {
     direction: initial;
-}
-.amenu2 {
-    color: initial;
-    padding: 15px 5px;
-    text-decoration: none;
 }
 
 /*boxes*/
 
-#box-um {
+.box-um {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -129,33 +110,28 @@ input[type="checkbox"]:checked ~ #navmenu1 {
     margin-bottom: 4%;
     margin-top: 3%;
     font-weight: bold;
+    font-size: 30px;
 }
 
-#titulo-box-um {
-    font-size: 25px;
-}
-
-#titulo-box-dois {
-    font-size: 40px;
-}
-
-#valor, #mercadoria, #transacao, #add {
+.conteudo-box-um {
     min-width: -webkit-fill-available;
     margin-top: 2%;
     margin-bottom: 7%;
     padding: 7px;
 }
 
-label {
+#add { 
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.elemento {
     font-size: 20px;
     font-weight: bolder;
 }
 
-#add {
-    background-color: black;
-    color: white;
-}
-#box-dois {
+.box-dois {
     width: 100%;
     margin-top: 5%;
     margin-right: 5%;
@@ -163,7 +139,7 @@ label {
 
 /*tabela*/
 
-#tabela {
+.tabela {
     width: 100%;
 }
 
@@ -183,45 +159,72 @@ label {
     padding-bottom: 15px;
 }
 
-
+.lucro {
+    text-align: right;
+    font-size: small;
+}
 #ultima-linha-tabela {
     padding-top: 15px;
     border: none;
-}
-#lucro {
-    text-align: right;
-    font-size: small;
 }
 
 
 /*media screen*/
 
+@media only screen and (min-width: 950px) {
+    .menu {
+        direction: initial;
+    }
+    .menu-topo {
+        display:none;
+    }
+    .nav-menu {
+        display: inherit;
+        background-color: #fff;
+        width: auto;
+        position: initial;
+        padding: 0;
+        margin: 10px;
+    }
+    .ul-menu {
+        display: flex;
+        position: initial;
+        margin: 0px;
+    }
+    .fechar {
+        display: none;
+    }
+    .a-menu {
+        padding: 12px 5px;
+        color: black;
+    }
+
+
+}
+
+
 /*Tablets, ipad*/
 
 @media only screen and (min-width: 580px) and (max-width: 949px) {
      
-    .menu2 {
-        display: none;
-    }
     main {
         display: block;
         padding: 10px;
     }
 
-    #menu-topo {
+    .menu-topo {
         display: initial;
         padding: 3px;
     }
-    
-    #navmenu1 {
-        width: 260px;
+    .nav-menu {
+        width: 30%;
     }
-    .ulmenu1 {
-        top: 25px;
-        font-size: 17px;
+    
+    .ul-menu {
+            font-size: 17px;
     }
 
-    #box-um {    
+    .box-um {    
         margin: 2%;
         padding: 1%;
         outline: auto;
@@ -229,7 +232,7 @@ label {
         width: auto;
     }
 
-    #box-dois {
+    .box-dois {
         margin: 2%;
         display: block;
         width: auto;
@@ -250,10 +253,10 @@ label {
 /*Smartphone*/
 @media only screen and (max-width: 579px) {
 
-    .menu2 {
-        display: none;
+    .nav-menu {
+        width: 50%;
     }
-    #menu-topo {
+    .menu-topo {
         display: initial;
         padding: 2px;
     }
@@ -270,11 +273,6 @@ label {
     .conteudo-topo {
         justify-content: initial;
     }
-
-    #navmenu1 {
-        width: 50%;
-        margin-right: 5px;
-    }
     
     main {
         display: block;
@@ -284,7 +282,7 @@ label {
         font-size: 15px;
     }
 
-    #box-dois {
+    .box-dois {
         margin: 5%;
         display: block;
         width: auto;
@@ -302,7 +300,7 @@ label {
         width: 90%;
     }
 
-    #box-um {
+    .box-um {
         width: auto;
     }
     
