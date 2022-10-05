@@ -10,6 +10,11 @@ body {
     padding: 0px;
     overflow: hidden;
 }
+header {
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+}
 
 main {
     display: flex;
@@ -27,6 +32,7 @@ main {
     padding: 20px 5px;
     color: white;
     text-align: left;
+    white-space: nowrap
 }
 .a-menu:hover {
     background-color: rgb(189, 184, 184);
@@ -69,15 +75,16 @@ input[type="checkbox"]:checked ~ .nav-menu {
 }
 .conteudo-topo {
     display: flex;
-    background-color: #e0e0e0;
-    justify-content: space-between;
     width: 100%;
     padding-top: 0;
+    max-width: 1112px;
 }
 .titulo-topo {
     align-self: center;
     font-size: 30px;
     font-weight: bold;
+    width: 100%;
+    margin: 15px;
 }
 
 .logo-topo {
@@ -195,8 +202,9 @@ input[type="checkbox"]:checked ~ .nav-menu {
         display: none;
     }
     .a-menu {
-        padding: 12px 5px;
         color: black;
+        font-size: 17px;
+        font-weight: bold;
     }
 
 
@@ -214,7 +222,11 @@ input[type="checkbox"]:checked ~ .nav-menu {
 
     .menu-topo {
         display: initial;
-        padding: 3px;
+        padding: 10px;
+    }
+    .titulo-topo {
+        text-align: center;
+        width: 80%;
     }
     .nav-menu {
         width: 30%;
@@ -269,6 +281,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
     .titulo-topo {
         font-size: 22px;
         font-weight: bold;
+        text-align: initial;
     }
     .conteudo-topo {
         justify-content: initial;
