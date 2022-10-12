@@ -21,6 +21,7 @@ main {
     margin: auto;
     padding: 10px;   
 }
+
 .menu {
     direction: rtl;
 }
@@ -62,7 +63,6 @@ input[type="checkbox"]:checked ~ .nav-menu {
     transform: translateX(-350px);
 }
 .menu-topo {
-    right: 20px;
     padding: 15px;
     position: fixed;
     z-index: 1;
@@ -137,22 +137,22 @@ input[type="checkbox"]:checked ~ .nav-menu {
 
 .tabela {
     width: 100%;
+    font-size: 14px;
 }
 
 .linha {
     font-weight: bolder;
-    font-size: large;
     padding-bottom: 20px;
 }
 
 .td {
-    border-bottom: solid 1px;
-    padding-bottom: 15px;
+    border-bottom: solid 1px #979797;
+    padding: 8px;
 }
 
 .td-2 {
-    border-bottom: double;
-    padding-bottom: 15px;
+    border-bottom: double 4px #979797;
+    padding: 8px;
 }
 
 .lucro {
@@ -160,7 +160,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
     font-size: small;
 }
 #ultima-linha-tabela {
-    padding-top: 15px;
+    padding: 8px;
     border: none;
 }
 
@@ -214,7 +214,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
     }
     .menu-topo {
         display: initial;
-        padding: 3px;
+        padding: 10px;
     }
 
     .titulo-topo {
@@ -259,6 +259,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
 /*Smartphone*/
 @media only screen and (max-width: 579px) {
 
+    
     .nav-menu {
         width: 50%;
     }
@@ -267,7 +268,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
     }
     .menu-topo {
         display: initial;
-        padding: 2px;
+        padding: 10px;
     }
     .logo-topo {
         margin-left: 10px;
@@ -279,9 +280,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
         font-size: 20px;
         text-align: center;
         width: 65%;
-    }
-    .conteudo-topo {
-        justify-content: initial;
+        margin: none;
     }
     
     main {
@@ -293,7 +292,9 @@ input[type="checkbox"]:checked ~ .nav-menu {
     .box-um {
         display: flex;
         flex-direction: column;
-        min-width: 350px;
+        min-width: 250px;
+        padding: 0px;
+        padding-bottom: 25px;
         border: none;
         border-bottom: 1px solid #979797;
     }
