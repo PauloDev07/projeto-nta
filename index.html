@@ -48,7 +48,7 @@
                         Nova Transação
                     </div>
                     <div class="elemento-form" id="elemento-form">
-                        <div class="elemento">
+                        <div class="transacao">
                             <label for="transacao">Tipo de transação</label> <br>
                             <select class="conteudo-box-um" id="transacao">
                                 <option value="saab">Compra</option>
@@ -56,14 +56,14 @@
                             </select>
                         </div> 
 
-                        <div class="elemento">
+                        <div class="mercadoria">
                             <label for="mercadoria">Nome da mercadoria</label> <br>
                             <input class="conteudo-box-um" placeholder="Mercadoria" type="text">
                         </div> 
 
-                        <div class="elemento">
-                        <label for="valor">Valor</label> <br>
-                        <input class="conteudo-box-um" placeholder="R$ 0,00" type="number">
+                        <div class="valor">
+                            <label for="valor">Valor</label> <br>
+                            <input class="conteudo-box-um" placeholder="R$ 0,00" type="number">
                         </div>
                     </div>
                     <div class="botao-add">
@@ -80,34 +80,37 @@
                 </div>
                     <table class="tabela">
                         <tr class="linha">
+                            <td></td>
                             <td>Mercadoria</td>
                             <td>Valor</td>
                         </tr>
 
                         <tr>
-                            <td class="td"> + Lorem Ipsum is simply dummy text of the printing</td>
+                            <td>+</td>
+                            <td class="td">Lorem Ipsum is simply dummy text of the printing</td>
                             <td class="td">R$ 12.999,99</td>
-                            <td class="td"></td>
                         </tr>
 
                         <tr>
-                            <td class="td"> - Quis nostrude exercitation</td>
+                            <td>-</td>
+                            <td class="td">Quis nostrude exercitation</td>
                             <td class="td">R$ 99,99</td>
-                            <td class="td"></td>
                         </tr>
 
                         <tr>
-                            <td class="td-2">+ Loren Ipsum</td>
+                            <td>+</td>
+                            <td class="td-2">Loren Ipsum</td>
                             <td class="td-2">R$ 9,99</td>
-                            <td class="td"></td>
                         </tr>
                         
                         <tr class="linha" id="ultima-linha-tabela">
+                            <td></td>
                             <td>Total</td>
                             <td>R$ 12.909,99</td>
                         </tr>
                         
                         <tr>
+                            <td></td>
                             <td></td>
                             <td class="lucro">[LUCRO]</td>
                             
