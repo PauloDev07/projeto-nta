@@ -6,8 +6,8 @@
 
 body {
     margin: 0px;
-    font-family: 'Lato';
     padding: 0px;
+    font-family: 'Lato';
 }
 header {
     background-color: #e0e0e0;
@@ -17,9 +17,9 @@ header {
 
 main {
     display: flex;
-    max-width: 1100px;
+    max-width: 1112px;
     margin: auto;
-    padding: 20px;   
+    padding: 10px;   
 }
 .menu {
     direction: rtl;
@@ -28,9 +28,9 @@ main {
 .a-menu {
     text-decoration: none;
     display: block;
-    padding: 20px 5px;
+    padding: 12px 5px;
     color: white;
-    text-align: left;
+    text-align: right;
     white-space: nowrap
 }
 .a-menu:hover {
@@ -69,8 +69,8 @@ input[type="checkbox"]:checked ~ .nav-menu {
     cursor: pointer;
 }
 .fechar {
-    text-align: right;
-    padding: 15px;
+    text-align: left;
+    padding: 10px;
 }
 .conteudo-topo {
     display: flex;
@@ -81,7 +81,6 @@ input[type="checkbox"]:checked ~ .nav-menu {
 .titulo-topo {
     align-self: center;
     font-size: 20px;
-    font-weight: bold;
     width: 100%;
     margin: 15px;
 }
@@ -107,14 +106,13 @@ input[type="checkbox"]:checked ~ .nav-menu {
     min-width: 400px;
     padding: 22px;
     border: 1px solid #979797;
+    margin: 10px;
 
 }
 .titulo-box {
     text-align: center;
-    margin-bottom: 4%;
-    margin-top: 3%;
-    font-weight: bold;
-    font-size: 30px;
+    margin: 10px;
+    font-size: 20px;
 }
 
 .conteudo-box-um {
@@ -132,7 +130,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
 
 .box-dois {
     width: 100%;
-    margin: 20px;
+    margin: 10px;
 }
 
 /*tabela*/
@@ -194,8 +192,11 @@ input[type="checkbox"]:checked ~ .nav-menu {
     }
     .a-menu {
         color: black;
-        font-size: 17px;
-        font-weight: bold;
+        font-size: 16px;
+    }
+    .barra {
+        margin: 1px;
+        margin-top: 9px;
     }
 }
 
@@ -208,7 +209,9 @@ input[type="checkbox"]:checked ~ .nav-menu {
         display: block;
         padding: 10px;
     }
-
+    .barra {
+        display: none;
+    }
     .menu-topo {
         display: initial;
         padding: 3px;
@@ -216,7 +219,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
 
     .titulo-topo {
         text-align: center;
-        width: 88%;
+        width: 80%;
     }
 
     .nav-menu {
@@ -230,6 +233,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
     .valor, .transacao {
         width: 25%;
         margin: 10px;
+        white-space: nowrap;
     }
     .mercadoria {
         width: 50%;
@@ -258,6 +262,9 @@ input[type="checkbox"]:checked ~ .nav-menu {
     .nav-menu {
         width: 50%;
     }
+    .barra {
+        display: none;
+    }
     .menu-topo {
         display: initial;
         padding: 2px;
@@ -270,7 +277,6 @@ input[type="checkbox"]:checked ~ .nav-menu {
 
     .titulo-topo {
         font-size: 20px;
-        font-weight: bold;
         text-align: center;
         width: 65%;
     }
@@ -284,7 +290,13 @@ input[type="checkbox"]:checked ~ .nav-menu {
     label {
         font-size: 15px;
     }
-
+    .box-um {
+        display: flex;
+        flex-direction: column;
+        min-width: 350px;
+        border: none;
+        border-bottom: 1px solid #979797;
+    }
     .box-dois {
         margin: 5%;
         display: block;
