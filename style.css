@@ -86,7 +86,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
 }
 
 .logo-topo {
-    margin-left: 23px;
+    margin-left: 20px;
     align-self: center;
 }
 
@@ -126,6 +126,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
     background-color: #333333;
     color: white;
     cursor: pointer;
+    border: none;
 }
 
 .box-dois {
@@ -268,16 +269,13 @@ input[type="checkbox"]:checked ~ .nav-menu {
     }
     .menu-topo {
         display: initial;
-        padding: 10px;
     }
     .logo-topo {
-        margin-left: 10px;
-        margin-right: 5px;
+        margin: 10px;
         align-self: center;
     }
 
     .titulo-topo {
-        font-size: 20px;
         text-align: center;
         width: 65%;
         margin: none;
