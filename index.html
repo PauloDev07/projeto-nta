@@ -51,9 +51,9 @@
                     <div class="elemento-form" id="elemento-form">
                         <div class="transacao">
                             <label for="transacao">Tipo de transação</label> <br>
-                            <select class="conteudo-box-um" id="transacao">
-                                <option value="saab">Compra</option>
-                                <option value="opel">Venda</option>
+                            <select class="conteudo-box-um" id="buysell">
+                                <option value="+">Compra</option>
+                                <option value="-">Venda</option>
                             </select>
                         </div> 
 
@@ -67,7 +67,7 @@
                             <input class="conteudo-box-um" placeholder="R$ 0,00" type="number">
                         </div>
                     </div>
-                    <div class="botao-add">
+                    <div class="botao-add" onsubmit="console.log('oi'); return false;">
                         <input class="conteudo-box-um" type="button" value="Adicionar Transação" id="add"> 
                     </div>                    
                 </form>
@@ -83,40 +83,16 @@
                         <tr class="linha">
                             <td></td>
                             <td>Mercadoria</td>
-                            <td>Valor</td>
+                            <td style="text-align: right">Valor</td>
+                        </tr>
+                        <tr class="transacaojs">
+
                         </tr>
 
-                        <tr>
-                            <td>+</td>
-                            <td class="td">Lorem Ipsum is simply dummy text of the printing</td>
-                            <td class="td">R$ 12.999,99</td>
-                        </tr>
-
-                        <tr>
-                            <td>-</td>
-                            <td class="td">Quis nostrude exercitation</td>
-                            <td class="td">R$ 99,99</td>
-                        </tr>
-
-                        <tr>
-                            <td>+</td>
-                            <td class="td-2">Loren Ipsum</td>
-                            <td class="td-2">R$ 9,99</td>
-                        </tr>
-                        
-                        <tr class="linha" id="ultima-linha-tabela">
-                            <td></td>
-                            <td>Total</td>
-                            <td>R$ 12.909,99</td>
-                        </tr>
-                        
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td class="lucro">[LUCRO]</td>
-                          </tr>
                     </table>
             </section>
         </main>
     </body>
+    <script src="./script.js"></script>
+    <script src="./formulario.js"></script>
 </html>

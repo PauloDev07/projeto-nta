@@ -146,26 +146,6 @@ input[type="checkbox"]:checked ~ .nav-menu {
     padding-bottom: 20px;
 }
 
-.td {
-    border-bottom: solid 1px #979797;
-    padding: 8px;
-}
-
-.td-2 {
-    border-bottom: double 4px #979797;
-    padding: 8px;
-}
-
-.lucro {
-    text-align: right;
-    font-size: small;
-}
-#ultima-linha-tabela {
-    padding: 8px;
-    border: none;
-}
-
-
 /*media screen*/
 
 @media only screen and (min-width: 950px) {
