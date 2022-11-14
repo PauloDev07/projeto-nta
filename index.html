@@ -51,7 +51,7 @@
                     <div class="elemento-form" id="elemento-form">
                         <div class="transacao">
                             <label for="transacao">Tipo de transação</label> <br>
-                            <select class="conteudo-box-um" id="tipo">
+                            <select class="conteudo-box-um" required id="tipo">
                                 <option value="+">Compra</option>
                                 <option value="-">Venda</option>
                             </select>
@@ -59,12 +59,12 @@
 
                         <div class="mercadoria">
                             <label for="mercadoria">Nome da mercadoria</label> <br>
-                            <input class="conteudo-box-um" placeholder="Mercadoria" type="text" id="nome">
+                            <input class="conteudo-box-um" placeholder="Mercadoria" required type="text" id="nome">
                         </div> 
 
                         <div class="valor">
                             <label for="valor">Valor</label> <br>
-                            <input class="conteudo-box-um" placeholder="R$ 0,00" type="number" id="valor">
+                            <input class="conteudo-box-um" placeholder="R$ 0,00" required type="text" onkeypress="apenasnumeros(event)" id="valor">
                         </div>
                     </div>
                     <div class="botao-add">
