@@ -30,7 +30,7 @@
                                         <img src="./src/x.png" width="20px" height="20px" style="cursor: pointer;">
                                     </label>
                                 </li>
-                                <li><a class="a-menu" href="./index.html">Cadastro</a></li>
+                                <li><a class="a-menu" href="./index.html" id="cadastro">Cadastro</a></li>
                                 <li class="barra">|</li>
                                 <li><a class="a-menu" href="./index.html">Limpar dados</a></li>
                             </ul>
@@ -43,7 +43,7 @@
 <!--Box-um para nova transação-->
 
         <main>
-            <section class="box-um">
+            <section class="box-um" onsubmit="adiciona(event)">
                 <form>
                     <div class="titulo-box">
                         Nova Transação
@@ -51,7 +51,7 @@
                     <div class="elemento-form" id="elemento-form">
                         <div class="transacao">
                             <label for="transacao">Tipo de transação</label> <br>
-                            <select class="conteudo-box-um" id="buysell">
+                            <select class="conteudo-box-um" id="tipo">
                                 <option value="+">Compra</option>
                                 <option value="-">Venda</option>
                             </select>
@@ -59,16 +59,16 @@
 
                         <div class="mercadoria">
                             <label for="mercadoria">Nome da mercadoria</label> <br>
-                            <input class="conteudo-box-um" placeholder="Mercadoria" type="text">
+                            <input class="conteudo-box-um" placeholder="Mercadoria" type="text" id="nome">
                         </div> 
 
                         <div class="valor">
                             <label for="valor">Valor</label> <br>
-                            <input class="conteudo-box-um" placeholder="R$ 0,00" type="number">
+                            <input class="conteudo-box-um" placeholder="R$ 0,00" type="number" id="valor">
                         </div>
                     </div>
-                    <div class="botao-add" onsubmit="console.log('oi'); return false;">
-                        <input class="conteudo-box-um" type="button" value="Adicionar Transação" id="add"> 
+                    <div class="botao-add">
+                        <input class="conteudo-box-um" type="submit" value="Adicionar Transação" id="add"> 
                     </div>                    
                 </form>
             </section>
@@ -94,5 +94,4 @@
         </main>
     </body>
     <script src="./script.js"></script>
-    <script src="./formulario.js"></script>
 </html>
