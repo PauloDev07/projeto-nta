@@ -144,6 +144,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
 .linha {
     font-weight: bolder;
     padding-bottom: 20px;
+    margin-top: 10px;
 }
 
 /*media screen*/

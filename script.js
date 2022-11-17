@@ -10,11 +10,11 @@ if (infostorage != null) {
 
 //Coleta de dados e inserção no extrato
 for (produto in transacao) {
-    document.querySelector('.tabela').innerHTML += `
-    <tr class="dados" style="width: 100%; font-size: 14px;">
-        <td style="padding:8px">${transacao[produto].tipo}</td>
-        <td style="border-bottom: solid 1px #979797; padding:8px">${transacao[produto].nome}</td>
-        <td style="border-bottom: solid 1px #979797; padding:8px; text-align: right;">${transacao[produto].valor}</td>
+    document.querySelector('.JS').innerHTML += `
+    <tr class="dados" style="width: 100%; font-size: 14px; padding:8px;">
+        <td>${transacao[produto].tipo}</td>
+        <td style="border-bottom: solid 1px #979797;">${transacao[produto].nome}</td>
+        <td style="border-bottom: solid 1px #979797; text-align: right;">${transacao[produto].valor}</td>
     </tr>`
 };
 
@@ -63,9 +63,9 @@ function apenasnumeros(num) {
             localStorage.clear();            
         }         
     }
-    
 
-//toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+
+//.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     
     //Atualização de dados da tabela 
     //function resetar() {
