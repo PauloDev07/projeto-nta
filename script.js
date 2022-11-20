@@ -11,11 +11,12 @@ if (infostorage != null) {
 
 //Coleta de dados e inserção no extrato
 for  (produto in transacao) {
+    let money = transacao[produto].valor
     document.querySelector('.tabela tbody').innerHTML += `
-    <tr class="dados" style="width: 100%; font-size: 14px; padding:8px;">
+    <tr class="dados" style="width: 100%; font-size: 14px; padding:8px; margin-bottom: 2px;">
         <td style="border-bottom: solid 1px #979797; text-Align: center">${transacao[produto].tipo}</td>
         <td style="border-bottom: solid 1px #979797; padding:12px;">${transacao[produto].nome}</td>
-        <td style="border-bottom: solid 1px #979797; text-align: right;">${transacao[produto].valor}</td>
+        <td style="border-bottom: solid 1px #979797; text-align: right;"> ${parseFloat(money).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
     </tr>`
 };
 
@@ -31,16 +32,9 @@ if (transacao.length == 0) {
 // INTEGRAÇÃO DE DADOS DO FORMULÁRIO AO EXTRATO
 
 
+//Integração de localStorage e informações do formulário
 function adiciona(add) {
     add.preventDefault();    
-    //Validação de caracteres numericos em "Valor'"
-    for (i in add.target.elements['valor'].value) {
-        if ('0123456789,.'.indexOf(add.target.elements['valor'].value[i]) == -1){
-            alert('Apenas números são permitidos no campo Valor!')
-            return false
-        }}       
-        
-    //Integração de localStorage e informações do formulário
     var infostorage = localStorage.getItem('transacao')
         if (infostorage != null) {
             var transacao = JSON.parse(infostorage)
@@ -52,6 +46,8 @@ function adiciona(add) {
         tipo: add.target.elements['tipo'].value,
         nome: add.target.elements['nome'].value,
         valor: add.target.elements['valor'].value
+        .replaceAll(".", "")
+        .replaceAll(",", "."),
     })
     
     localStorage.setItem('transacao', JSON.stringify(transacao))
@@ -61,24 +57,30 @@ function adiciona(add) {
     //Calculo total das mercadorias
     var total = 0
     for (negocio in transacao) {
-        total += parseFloat(transacao[negocio].valor * (negocio.tipo == '-' ? -1 : 1))
+        if (transacao[negocio].tipo == '+'){
+            console.log('+')
+            total += parseFloat((transacao[negocio].valor))
+        } else {
+            console.log('-')
+            total -= parseFloat((transacao[negocio].valor))
+        }
     }
-    document.querySelector('.total').innerHTML =`R$ ${total}`
+    
+    document.querySelector('.total').innerHTML = `${parseFloat(total).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
 
     //Resumo da transação
-    var resumo = '[]'
+    var resumo = ''
     if (total >= 1) {
         resumo = `[LUCRO]`
     } else {
         resumo = `[PREJUÍZO]`
-    }
-    document.querySelector('.resumo').innerHTML =`${resumo}`
+    }   document.querySelector('.resumo').innerHTML = `${resumo}`
 
 
 
 
 // MÁSCARAS DO PROJETO
-//Limpeza de dados e mensagem de confirmação
+//Limpeza de dados 
 function apenasnumeros(num) {
     e.preventDefault()
     console.log(num)
@@ -86,32 +88,19 @@ function apenasnumeros(num) {
         num.target.value += num.key
     }}
     
+    //Mensagem de confirmação
     function limpardados(){
         let msg = "Deseja realmente limpar os dados? \nEssa ação removerá todos os dados salvos.";
         if (confirm(msg) == true) {
             localStorage.clear();            
         }         
     }
+    
 
 
-//Máscara de formatação de valores com uso de pontos e virgulas
-    //function formatarMoeda() {
-    //    let moeda = document.getElementById('valor');
-    //    let preco = moeda.value;
 
-    //    preco = preco + '';
-    //    preco = parseInt(preco.replace(/[\D]+/g, ''));
-    //    preco = preco + '';
-    //    preco = preco.replace(/([0-9]{2})$/g, ",$1");
 
-    //    if (preco.length > 6) {
-    //        preco = preco.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-    //    }
-    //    moeda.value = preco;
-    //    if(preco == 'NaN') moeda.value = '';
-    //};
 
-//.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     
     //Atualização de dados da tabela 
     //function resetar() {

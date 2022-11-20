@@ -4,20 +4,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Projeto New Tab</title>
-        <!--
-if (total >= 1) {
-    resumo == '[LUCRO]'
-} else {
-    resumo == '[PREJUÍZO]'
-}
-document.querySelector('.resumo').innerHTML =`R$ ${resumo}`-->
-    </head>
+        </head>
 
-    <body>
-    
-    <!--Topo da pagina-->
-        <header>
-            <div class="conteudo-topo">
+        <body>
+            
+            <!--Topo da pagina-->
+            <header>
+                <div class="conteudo-topo">
                 <div class="logo-topo">
                     <img src="./src/logo.png" width="40px" height="40px">
                 </div>
@@ -46,13 +39,13 @@ document.querySelector('.resumo').innerHTML =`R$ ${resumo}`-->
                 </div>
             </div>
         </header>
-
+        
 <!--Box-um para nova transação-->
 
-        <main>
-            <section class="box-um" onsubmit="adiciona(event)">
-                <form>
-                    <div class="titulo-box">
+<main>
+    <section class="box-um" onsubmit="adiciona(event)">
+        <form>
+            <div class="titulo-box">
                         Nova Transação
                     </div>
                     <div class="elemento-form" id="elemento-form">
@@ -63,7 +56,7 @@ document.querySelector('.resumo').innerHTML =`R$ ${resumo}`-->
                                 <option value="-">Venda</option>
                             </select>
                         </div> 
-
+                        
                         <div class="mercadoria">
                             <label for="mercadoria">Nome da mercadoria</label> <br>
                             <input class="conteudo-box-um" placeholder="Mercadoria" required type="text" id="nome">
@@ -71,7 +64,8 @@ document.querySelector('.resumo').innerHTML =`R$ ${resumo}`-->
 
                         <div class="valor">
                             <label for="valor">Valor</label> <br>
-                            <input class="conteudo-box-um" placeholder="R$ 0,00" required type="text" onkeypress="apenasnumeros(event)" id="valor">
+                            <input class="conteudo-box-um" placeholder="R$ 0,00" required type="text" 
+                            onkeypress="$(this).mask('#.##0,00', {reverse: true});" id="valor">
                         </div>
                     </div>
                     <div class="botao-add">
@@ -80,13 +74,13 @@ document.querySelector('.resumo').innerHTML =`R$ ${resumo}`-->
                 </form>
             </section>
 
-<!--Box para Extrato-->
-
+            <!--Box para Extrato-->
+            
             <section class="box-dois">
                 <div class="titulo-box">
                     Extrato de transação
                 </div>
-                    <table cellspacing="0" class="tabela">
+                <table cellspacing="0" class="tabela">
                         <thead>
                             <tr class="linha">
                                 <td></td>
@@ -98,7 +92,7 @@ document.querySelector('.resumo').innerHTML =`R$ ${resumo}`-->
                             <!--Conteudo incluido por JavaScript-->
                         </tbody>
                         <tfoot>
-                            <tr class="duplalinha">
+                            <tr class="linha">
                                 <td ></td>
                                 <td>Total</td>
                                 <td class="total"></td>
@@ -114,4 +108,6 @@ document.querySelector('.resumo').innerHTML =`R$ ${resumo}`-->
         </main>
     </body>
     <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </html>
