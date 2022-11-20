@@ -95,23 +95,9 @@ function apenasnumeros(num) {
             localStorage.clear();            
         }         
     }
-    
 
-
-
-
-
-    
-    //Atualização de dados da tabela 
-    //function resetar() {
-        //    resetabela = [...document.querySelectorAll('.tabela .dados')];
-        //    resetabela.forEach((element) => {
-        //        element.remove() 
-        //    })
-        //resetar()
-        //Remoção de itens
-        // <td> <button onclick="removeritem(${produto})"> Remover </button></td>
-        //function removeritem(rem) {
-        //transacao.splice(rem, 1);
-        //resetar();
-        //localStorage.setItem('transacao', JSON.stringify(transacao))}
+    //Bloqueio de "cola" no campo valor
+    const cola = document.querySelector('#valor');
+    cola.addEventListener("paste", function(c) {
+        c.preventDefault();
+    });

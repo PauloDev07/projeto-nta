@@ -141,10 +141,14 @@ input[type="checkbox"]:checked ~ .nav-menu {
     font-size: 14px;
 }
 
-.linha {
+.linha, .duolinha {
     font-weight: bolder;
     padding-bottom: 20px;
     margin-top: 10px;
+}
+
+.duolinha td {
+    border-top-style: double
 }
 
 .resumo, .total {

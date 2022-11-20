@@ -59,12 +59,12 @@
                         
                         <div class="mercadoria">
                             <label for="mercadoria">Nome da mercadoria</label> <br>
-                            <input class="conteudo-box-um" placeholder="Mercadoria" required type="text" id="nome">
+                            <input class="conteudo-box-um" placeholder="Mercadoria" required type="text" autocomplete="off" id="nome">
                         </div> 
 
                         <div class="valor">
                             <label for="valor">Valor</label> <br>
-                            <input class="conteudo-box-um" placeholder="R$ 0,00" required type="text" 
+                            <input class="conteudo-box-um" placeholder="R$ 0,00" required autocomplete="off" type="text" 
                             onkeypress="$(this).mask('#.##0,00', {reverse: true});" id="valor">
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                             <!--Conteudo incluido por JavaScript-->
                         </tbody>
                         <tfoot>
-                            <tr class="linha">
+                            <tr class="duolinha">
                                 <td ></td>
                                 <td>Total</td>
                                 <td class="total"></td>
