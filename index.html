@@ -4,6 +4,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Projeto New Tab</title>
+        <!--
+if (total >= 1) {
+    resumo == '[LUCRO]'
+} else {
+    resumo == '[PREJUÍZO]'
+}
+document.querySelector('.resumo').innerHTML =`R$ ${resumo}`-->
     </head>
 
     <body>
@@ -64,7 +71,7 @@
 
                         <div class="valor">
                             <label for="valor">Valor</label> <br>
-                            <input class="conteudo-box-um" placeholder="R$ 0,00" required type="text" onkeypress="apenasnumeros(event)" onkeyup="formatarMoeda()" id="valor">
+                            <input class="conteudo-box-um" placeholder="R$ 0,00" required type="text" onkeypress="apenasnumeros(event)" id="valor">
                         </div>
                     </div>
                     <div class="botao-add">
@@ -80,20 +87,28 @@
                     Extrato de transação
                 </div>
                     <table cellspacing="0" class="tabela">
-                        <tr class="linha">
-                            <td></td>
-                            <td>Mercadoria</td>
-                            <td style="text-align: right">Valor</td>
-                        </tr>
-                        <tr class="JS">
-                         <!--<td></td>
-                            <td style="padding: 40px; text-align: center; font-size: large; "> NENHUMA TRANSAÇÃO CADASTRADA</td>
-                            <td></td>
-                        </tr>
-                        <tr class="linha">
-                            <td></td>
-                            <td>Valor total</td>
-                            <td style="text-align: right;">R$10.000</td>-->
+                        <thead>
+                            <tr class="linha">
+                                <td></td>
+                                <td>Mercadoria</td>
+                                <td style="text-align: right">Valor</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--Conteudo incluido por JavaScript-->
+                        </tbody>
+                        <tfoot>
+                            <tr class="duplalinha">
+                                <td ></td>
+                                <td>Total</td>
+                                <td class="total"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="resumo"></td>
+                            </tr>
+                        </tfoot>
                     </table>
             </section>
         </main>

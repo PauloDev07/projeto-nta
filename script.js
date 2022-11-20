@@ -8,11 +8,12 @@ if (infostorage != null) {
     var transacao = [];
 }
 
+
 //Coleta de dados e inserção no extrato
 for  (produto in transacao) {
-    document.querySelector('.tabela').innerHTML += `
+    document.querySelector('.tabela tbody').innerHTML += `
     <tr class="dados" style="width: 100%; font-size: 14px; padding:8px;">
-        <td style="text-Align: center">${transacao[produto].tipo}</td>
+        <td style="border-bottom: solid 1px #979797; text-Align: center">${transacao[produto].tipo}</td>
         <td style="border-bottom: solid 1px #979797; padding:12px;">${transacao[produto].nome}</td>
         <td style="border-bottom: solid 1px #979797; text-align: right;">${transacao[produto].valor}</td>
     </tr>`
@@ -39,13 +40,13 @@ function adiciona(add) {
             return false
         }}       
         
-        //Integração de localStorage e informações do formulário
-        var infostorage = localStorage.getItem('transacao')
+    //Integração de localStorage e informações do formulário
+    var infostorage = localStorage.getItem('transacao')
         if (infostorage != null) {
             var transacao = JSON.parse(infostorage)
-    } else {
+        } else {
         var transacao = [];
-    }
+        }
     
     transacao.push({
         tipo: add.target.elements['tipo'].value,
@@ -56,6 +57,24 @@ function adiciona(add) {
     localStorage.setItem('transacao', JSON.stringify(transacao))
     document.getElementById('cadastro').click()
 }
+
+    //Calculo total das mercadorias
+    var total = 0
+    for (negocio in transacao) {
+        total += parseFloat(transacao[negocio].valor * (negocio.tipo == '-' ? -1 : 1))
+    }
+    document.querySelector('.total').innerHTML =`R$ ${total}`
+
+    //Resumo da transação
+    var resumo = '[]'
+    if (total >= 1) {
+        resumo = `[LUCRO]`
+    } else {
+        resumo = `[PREJUÍZO]`
+    }
+    document.querySelector('.resumo').innerHTML =`${resumo}`
+
+
 
 
 // MÁSCARAS DO PROJETO
@@ -76,41 +95,21 @@ function apenasnumeros(num) {
 
 
 //Máscara de formatação de valores com uso de pontos e virgulas
-    function formatarMoeda() {
-        let moeda = document.getElementById('valor');
-        let preco = moeda.value;
+    //function formatarMoeda() {
+    //    let moeda = document.getElementById('valor');
+    //    let preco = moeda.value;
 
-        preco = preco + '';
-        preco = parseInt(preco.replace(/[\D]+/g, ''));
-        preco = preco + '';
-        preco = preco.replace(/([0-9]{2})$/g, ",$1");
+    //    preco = preco + '';
+    //    preco = parseInt(preco.replace(/[\D]+/g, ''));
+    //    preco = preco + '';
+    //    preco = preco.replace(/([0-9]{2})$/g, ",$1");
 
-        if (preco.length > 6) {
-            preco = preco.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-        }
-        moeda.value = preco;
-        if(preco == 'NaN') moeda.value = '';
-    }
-
-  
-
-    var arr = [1,2,3,4,5,6,7,8,9,10];
-    var soma = arr.reduce(function(soma, i) {
-    return soma + i;
-});
-console.log(soma);
-
-
-
-
-
-
-
-
-
-
-
-
+    //    if (preco.length > 6) {
+    //        preco = preco.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+    //    }
+    //    moeda.value = preco;
+    //    if(preco == 'NaN') moeda.value = '';
+    //};
 
 //.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
     

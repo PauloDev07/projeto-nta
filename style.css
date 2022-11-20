@@ -147,6 +147,20 @@ input[type="checkbox"]:checked ~ .nav-menu {
     margin-top: 10px;
 }
 
+.duplalinha {
+    
+    font-weight: bolder;
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+
+.resumo, .total {
+    font-weight: bolder;
+    text-align: right; 
+}
+
+
+
 /*media screen*/
 
 @media only screen and (min-width: 950px) {
