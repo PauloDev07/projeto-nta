@@ -32,7 +32,8 @@ main {
     padding: 12px 5px;
     color: white;
     text-align: right;
-    white-space: nowrap
+    white-space: nowrap;
+    cursor: pointer;
 }
 .a-menu:hover {
     background-color: rgb(189, 184, 184);
@@ -104,6 +105,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
     display: flex;
     flex-direction: column;
     min-width: 400px;
+    max-height: 330px;
     padding: 22px;
     border: 1px solid #979797;
     margin: 10px;
@@ -206,8 +208,9 @@ input[type="checkbox"]:checked ~ .nav-menu {
         display: none;
     }
     .menu-topo {
-        display: initial;
+        display: flex;
         padding: 10px;
+        position: initial;
     }
 
     .titulo-topo {
@@ -217,6 +220,7 @@ input[type="checkbox"]:checked ~ .nav-menu {
 
     .nav-menu {
         width: 30%;
+        top: 0px;
     }
     
     .ul-menu {
@@ -255,12 +259,14 @@ input[type="checkbox"]:checked ~ .nav-menu {
     
     .nav-menu {
         width: 50%;
+        top: 0px;
     }
     .barra {
         display: none;
     }
     .menu-topo {
-        display: initial;
+        display: flex;
+        position: initial;
     }
     .logo-topo {
         margin: 10px;
