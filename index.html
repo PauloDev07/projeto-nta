@@ -32,7 +32,7 @@
                                 </li>
                                 <li><a class="a-menu" href="./index.html" id="cadastro">Cadastro</a></li>
                                 <li class="barra">|</li>
-                                <li><a class="a-menu" href="./index.html" onclick="limpardados()">Limpar dados</a></li>
+                                <li><a class="a-menu" href="javascript:void(0)" onclick="limpardados()">Limpar dados</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -43,8 +43,8 @@
 <!--Box-um para nova transação-->
 
 <main>
-    <section class="box-um" >
-        <form onsubmit="adiciona(event)">
+    <section class="box-um">
+        <form  onsubmit="adiciona(event)">
             <div class="titulo-box">
                         Nova Transação
                     </div>
@@ -64,7 +64,8 @@
 
                         <div class="valor">
                             <label for="valor">Valor</label> <br>
-                            <input class="conteudo-box-um" placeholder="R$ 0,00" required autocomplete="off" type="text" id="valor" onkeyup="formatarmoeda()">
+                            <input class="conteudo-box-um" placeholder="R$ 0,00" required autocomplete="off" type="text" id="valor" 
+                            onkeypress="$(this).mask('###.###.###.###.###.##0,00', {reverse: true});">
                         </div>
                     </div>
                     <div class="botao-add">
@@ -91,20 +92,12 @@
                             <!--Conteudo incluido por JavaScript-->
                         </tbody>
                         <tfoot>
-                            <tr class="duolinha">
-                                <td ></td>
-                                <td>Total</td>
-                                <td class="total"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td class="resumo"></td>
-                            </tr>
                         </tfoot>
                     </table>
             </section>
         </main>
     </body>
     <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </html>
