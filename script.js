@@ -8,8 +8,37 @@
         var transacao = [];
     };
 
-function desenhatabela(){
-    document.querySelector('.tabela tbody').innerHTML = '';
+function desenhaTabela(){
+    document.querySelector('.tabela tbody').innerHTML = '';        
+        
+//Coleta de dados e inserção no extrato
+    for (produto in transacao){
+    let money = transacao[produto].valor
+        document.querySelector('.tabela tbody').innerHTML += `
+        <tr class="dados" style="width: 100%; font-size: 14px; padding:8px; margin-bottom: 2px;">
+            <td style="border-bottom: solid 1px #979797; text-Align: center">${transacao[produto].tipo}</td>
+            <td style="border-bottom: solid 1px #979797; padding:12px;">${transacao[produto].nome}</td>
+            <td style="border-bottom: solid 1px #979797; text-align: right;"> ${parseFloat(money).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
+        </tr>`;
+    };
+       
+  
+//Mensagem para falta de transação cadastrada
+    if (transacao.length == 0) {
+        document.querySelector('.tabela').innerHTML = `
+        <thead></thead>
+        <tr class="dados">
+            <td></td>
+            <td style="text-Align: center; font-size: 30px; padding-top:100px;"> Nenhuma transação cadastrada</td>
+            <td></td>
+        </tr>
+        <tfoot></tfoot>`
+    };
+
+};
+
+//Função para o total, resumo e thead/tfoot
+function desenhaTotal() {
     var total = 0
 
 //Calculo total das mercadorias
@@ -22,59 +51,42 @@ function desenhatabela(){
             total -= parseFloat((transacao[produto].valor))
         };
         
-        
-//Coleta de dados e inserção no extrato
-    let money = transacao[produto].valor
-        document.querySelector('.tabela tbody').innerHTML += `
-        <tr class="dados" style="width: 100%; font-size: 14px; padding:8px; margin-bottom: 2px;">
-            <td style="border-bottom: solid 1px #979797; text-Align: center">${transacao[produto].tipo}</td>
-            <td style="border-bottom: solid 1px #979797; padding:12px;">${transacao[produto].nome}</td>
-            <td style="border-bottom: solid 1px #979797; text-align: right;"> ${parseFloat(money).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
-        </tr>`;
-
-
 //Chamada do total e resumo da transação
-        document.querySelector('.total').innerHTML = `${parseFloat(total).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`;
-    
     var resumo = '';
         if (total > 0) {
             resumo = `[LUCRO]`
         } else if (total < 0) {
             resumo = `[PREJUÍZO]`
-        }
-        
-        document.querySelector('.resumo').innerHTML = `${resumo}`
-    };   
-  
-//Mensagem para falta de transação cadastrada
-    if (transacao.length == 0) {
-        document.querySelector('.tabela').innerHTML = `
-        <tr class="dados">
-            <td></td>
-            <td style="text-Align: center; font-size: 30px; padding-top:100px;"> Nenhuma transação cadastrada</td>
-            <td></td>
-        </tr>`
-    };
+        }    
+}; 
 
-};
-
-
-function desenhatotal() {
+//Chamada do tfoot
     document.querySelector('.tabela tfoot').innerHTML = `
-    <tr class="duolinha">
-        <td ></td>
-        <td>Total</td>
-        <td class="total"></td>
-    </tr>
+        <tr class="duolinha">
+            <td ></td>
+            <td>Total</td>
+            <td class="total"></td>
+        </tr>
         <tr>
+            <td></td>
+            <td></td>
+            <td class="resumo"></td>
+        </tr>`;
+    document.querySelector('.resumo').innerHTML = `${resumo}`;
+    document.querySelector('.total').innerHTML = `${parseFloat(total).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`; 
+
+
+//Chamada do thead
+    document.querySelector('.tabela thead').innerHTML = `
+    <tr class="linha">
         <td></td>
-        <td></td>
-        <td class="resumo"></td>
+        <td>Mercadoria</td>
+        <td style="text-align: right">Valor</td>
     </tr>`
 };
 
-desenhatotal()
-desenhatabela();
+desenhaTotal()
+desenhaTabela();
 
 //Integração de localStorage e informações do formulário
 function adiciona(add) {
@@ -85,10 +97,15 @@ function adiciona(add) {
         valor: add.target.elements['valor'].value
         .replaceAll(".", "")
         .replaceAll(",", "."),    
-})
+
+    })
+
+    add.target.elements['nome'].value = '';
+    add.target.elements['valor'].value = '';
+
     localStorage.setItem('transacao', JSON.stringify(transacao))
-    desenhatotal()
-    desenhatabela();
+    desenhaTotal()
+    desenhaTabela();
 };
 
 
@@ -103,13 +120,14 @@ function apenasnumeros(num) {
     }};
         
 //Mensagem de confirmação
-function limpardados(){
+function limparDados(){
     let msg = "Deseja realmente limpar os dados? \nEssa ação removerá todos os dados salvos.";
+
     if (confirm(msg) == true) {
         transacao = []
-        localStorage.clear() 
-        desenhatotal()   
-        desenhatabela();        
+        localStorage.removeItem('transacao') 
+        desenhaTotal()   
+        desenhaTabela();        
     }         
 };
 
