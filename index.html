@@ -1,98 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Projeto New Tab</title>
-        </head>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Projeto New Tab</title>
+	</head>
 
-        <body>
-            
-            <!--Topo da pagina-->
-            <header>
-                <div class="conteudo-topo">
-                <div class="logo-topo">
-                    <img src="./src/logo.png" width="40px" height="40px">
-                </div>
-                <div class="titulo-topo">
-                    Controle Financeiro
-                </div>
-                <div class="menu">            
-                    <div class="barra-lateral">
-                        <input type="checkbox" id="check">
-                        <label class="menu-topo" for="check">
-                            <img src="./src/menu.png" width="40px" height="40px">
-                        </label>
-                        <nav class="nav-menu">
-                            <ul class="ul-menu">
-                                <li class="fechar">
-                                    <label for="check">
-                                        <img src="./src/x.png" width="20px" height="20px" style="cursor: pointer;">
-                                    </label>
-                                </li>
-                                <li><a class="a-menu" href="./index.html" id="cadastro">Cadastro</a></li>
-                                <li class="barra">|</li>
-                                <li><a class="a-menu" href="javascript:void(0)" onclick="limparDados()">Limpar dados</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
-        
-<!--Box-um para nova transação-->
+	<body>
+		<!--Topo da pagina-->
+		<header>
+			<div class="conteudo-topo">
+				<div class="logo-topo">
+					<img src="./src/logo.png" width="40px" height="40px" />
+				</div>
+				<div class="titulo-topo">Controle Financeiro</div>
+				<div class="menu">
+					<div class="barra-lateral">
+						<input type="checkbox" id="check" />
+						<label class="menu-topo" for="check">
+							<img src="./src/menu.png" width="40px" height="40px" />
+						</label>
+						<nav class="nav-menu">
+							<ul class="ul-menu">
+								<li class="fechar">
+									<label for="check">
+										<img
+											src="./src/x.png"
+											width="20px"
+											height="20px"
+											style="cursor: pointer"
+										/>
+									</label>
+								</li>
+								<li>
+									<a class="a-menu" href="./index.html" id="cadastro">Cadastro</a>
+								</li>
+								<li class="barra">|</li>
+								<li>
+									<a class="a-menu" href="javascript:void(0)" onclick="limparDados()"
+										>Limpar dados</a
+									>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
 
-<main>
-    <section class="box-um">
-        <form  onsubmit="adiciona(event)">
-            <div class="titulo-box">
-                        Nova Transação
-                    </div>
-                    <div class="elemento-form" id="elemento-form">
-                        <div class="transacao">
-                            <label for="transacao">Tipo de transação</label> <br>
-                            <select class="conteudo-box-um" required id="tipo">
-                                <option value="+">Compra</option>
-                                <option value="-">Venda</option>
-                            </select>
-                        </div> 
-                        
-                        <div class="mercadoria">
-                            <label for="mercadoria">Nome da mercadoria</label> <br>
-                            <input class="conteudo-box-um" placeholder="Mercadoria" required type="text" autocomplete="off" id="nome">
-                        </div> 
+		<!--Box-um para nova transação-->
 
-                        <div class="valor">
-                            <label for="valor">Valor</label> <br>
-                            <input class="conteudo-box-um" placeholder="R$ 0,00" required autocomplete="off" type="text" id="valor" 
-                            onkeypress="$(this).mask('###.###.###.###.###.##0,00', {reverse: true});">
-                        </div>
-                    </div>
-                    <div class="botao-add">
-                        <input class="conteudo-box-um" type="submit" value="Adicionar Transação" id="add"> 
-                    </div>                    
-                </form>
-            </section>
+		<main>
+			<section class="box-um">
+				<form onsubmit="adiciona(event)">
+					<div class="titulo-box">Nova Transação</div>
+					<div class="elemento-form" id="elemento-form">
+						<div class="transacao">
+							<label for="transacao">Tipo de transação</label> <br />
+							<select class="conteudo-box-um" required id="tipo">
+								<option value="+">Compra</option>
+								<option value="-">Venda</option>
+							</select>
+						</div>
 
-            <!--Box para Extrato-->
-            
-            <section class="box-dois">
-                <div class="titulo-box">
-                    Extrato de transação
-                </div>
-                <table cellspacing="0" class="tabela">
-                        <thead>
-                        </thead>
-                        <tbody>
-                            <!--Conteudo incluido por JavaScript-->
-                        </tbody>
-                        <tfoot>
-                        </tfoot>
-                    </table>
-            </section>
-        </main>
-    </body>
-    <script src="./script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+						<div class="mercadoria">
+							<label for="mercadoria">Nome da mercadoria</label> <br />
+							<input
+								class="conteudo-box-um"
+								placeholder="Mercadoria"
+								required
+								type="text"
+								autocomplete="off"
+								id="nome"
+							/>
+						</div>
+
+						<div class="valor">
+							<label for="valor">Valor</label> <br />
+							<input
+								class="conteudo-box-um"
+								placeholder="R$ 0,00"
+								required
+								autocomplete="off"
+								type="text"
+								id="valor"
+								onkeypress="$(this).mask('###.###.###.###.###.##0,00', {reverse: true});"
+							/>
+						</div>
+					</div>
+					<div class="botao-add">
+						<input
+							class="conteudo-box-um"
+							type="submit"
+							value="Adicionar Transação"
+							id="add"
+						/>
+					</div>
+				</form>
+			</section>
+
+			<!--Box para Extrato-->
+
+			<section class="box-dois">
+				<div class="titulo-box">Extrato de transação</div>
+				<table cellspacing="0" class="tabela">
+					<thead></thead>
+					<tbody>
+						<!--Conteudo incluido por JavaScript-->
+					</tbody>
+					<tfoot></tfoot>
+				</table>
+			</section>
+		</main>
+	</body>
+	<script src="./script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </html>

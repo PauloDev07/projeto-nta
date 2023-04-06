@@ -1,322 +1,321 @@
 /*importação de fonte Lato*/
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
- 
+
 /* corpo do projeto*/
 
-
 body {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Lato';
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lato';
 }
 header {
-    background-color: #e0e0e0;
-    display: flex;
-    justify-content: center;
+	background-color: #e0e0e0;
+	display: flex;
+	justify-content: center;
 }
 
 main {
-    display: flex;
-    max-width: 1112px;
-    margin: auto;
-    padding: 10px;   
+	display: flex;
+	max-width: 1112px;
+	margin: auto;
+	padding: 10px;
 }
 
 .menu {
-    direction: rtl;
+	direction: rtl;
 }
 
 .a-menu {
-    text-decoration: none;
-    display: block;
-    padding: 12px 5px;
-    color: white;
-    text-align: right;
-    white-space: nowrap;
-    cursor: pointer;
+	text-decoration: none;
+	display: block;
+	padding: 12px 5px;
+	color: white;
+	text-align: right;
+	white-space: nowrap;
+	cursor: pointer;
 }
 .a-menu:hover {
-    background-color: rgb(189, 184, 184);
-    color: black;
+	background-color: rgb(189, 184, 184);
+	color: black;
 }
 .ul-menu {
-    list-style: none;
-    position: fixed;
-    width: 100%;
-    margin-top: auto;
-    font-size: 20px;
-    padding: 0px;
+	list-style: none;
+	position: fixed;
+	width: 100%;
+	margin-top: auto;
+	font-size: 20px;
+	padding: 0px;
 }
 
 #check {
-    display: none;
+	display: none;
 }
 .nav-menu {
-    background-color: rgb(61, 61, 61);
-    height: 100%;
-    width: 350px;
-    right: -350px;
-    position: fixed;
-    transition: all .5s;
-    z-index: 1;
+	background-color: rgb(61, 61, 61);
+	height: 100%;
+	width: 350px;
+	right: -350px;
+	position: fixed;
+	transition: all 0.5s;
+	z-index: 1;
 }
-input[type="checkbox"]:checked ~ .nav-menu {
-    transform: translateX(-350px);
+input[type='checkbox']:checked ~ .nav-menu {
+	transform: translateX(-350px);
 }
 .menu-topo {
-    padding: 15px;
-    position: fixed;
-    z-index: 1;
-    cursor: pointer;
+	padding: 15px;
+	position: fixed;
+	z-index: 1;
+	cursor: pointer;
 }
 .fechar {
-    text-align: left;
-    padding: 10px;
+	text-align: left;
+	padding: 10px;
 }
 .conteudo-topo {
-    display: flex;
-    width: 100%;
-    padding-top: 0;
-    max-width: 1112px;
+	display: flex;
+	width: 100%;
+	padding-top: 0;
+	max-width: 1112px;
 }
 .titulo-topo {
-    align-self: center;
-    font-size: 20px;
-    width: 100%;
-    margin: 15px;
+	align-self: center;
+	font-size: 20px;
+	width: 100%;
+	margin: 15px;
 }
 
 .logo-topo {
-    margin-left: 20px;
-    align-self: center;
+	margin-left: 20px;
+	align-self: center;
 }
 
-.menu-topo{
-    display: none;
+.menu-topo {
+	display: none;
 }
 
 .barra-lateral {
-    direction: initial;
+	direction: initial;
 }
 
 /*boxes*/
 
 .box-um {
-    display: flex;
-    flex-direction: column;
-    min-width: 400px;
-    max-height: 330px;
-    padding: 22px;
-    border: 1px solid #979797;
-    margin: 10px;
-
+	display: flex;
+	flex-direction: column;
+	min-width: 400px;
+	max-height: 330px;
+	padding: 22px;
+	border: 1px solid #979797;
+	margin: 10px;
 }
 .titulo-box {
-    text-align: center;
-    margin: 10px;
-    font-size: 20px;
+	text-align: center;
+	margin: 10px;
+	font-size: 20px;
 }
 
 .conteudo-box-um {
-    min-width: -webkit-fill-available;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding: 10px;
+	min-width: -webkit-fill-available;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	padding: 10px;
 }
 
-#add { 
-    background-color: #333333;
-    color: white;
-    cursor: pointer;
-    border: none;
+#add {
+	background-color: #333333;
+	color: white;
+	cursor: pointer;
+	border: none;
 }
 
 .box-dois {
-    width: 100%;
-    margin: 10px;
+	width: 100%;
+	margin: 10px;
 }
 
 /*tabela*/
 
 .tabela {
-    width: 100%;
-    font-size: 14px;
+	width: 100%;
+	font-size: 14px;
 }
 
-.linha, .duolinha {
-    font-weight: bolder;
-    padding-bottom: 20px;
-    margin-top: 10px;
+.linha,
+.duolinha {
+	font-weight: bolder;
+	padding-bottom: 20px;
+	margin-top: 10px;
 }
 
 .duolinha td {
-    border-top-style: double
+	border-top-style: double;
 }
 
-.resumo, .total {
-    font-weight: bolder;
-    text-align: right; 
+.resumo,
+.total {
+	font-weight: bolder;
+	text-align: right;
 }
-
-
 
 /*media screen*/
 
 @media only screen and (min-width: 950px) {
-    .menu {
-        direction: initial;
-    }
-    .menu-topo {
-        display:none;
-    }
-    .nav-menu {
-        display: inherit;
-        background-color: #fff;
-        width: auto;
-        position: initial;
-        padding: 0;
-        margin: 10px;
-    }
-    .ul-menu {
-        display: flex;
-        position: initial;
-        margin: 0px;
-    }
-    .fechar {
-        display: none;
-    }
-    .a-menu {
-        color: black;
-        font-size: 16px;
-    }
-    .barra {
-        margin: 1px;
-        margin-top: 9px;
-    }
+	.menu {
+		direction: initial;
+	}
+	.menu-topo {
+		display: none;
+	}
+	.nav-menu {
+		display: inherit;
+		background-color: #fff;
+		width: auto;
+		position: initial;
+		padding: 0;
+		margin: 10px;
+	}
+	.ul-menu {
+		display: flex;
+		position: initial;
+		margin: 0px;
+	}
+	.fechar {
+		display: none;
+	}
+	.a-menu {
+		color: black;
+		font-size: 16px;
+	}
+	.barra {
+		margin: 1px;
+		margin-top: 9px;
+	}
 }
-
 
 /*Tablets, ipad*/
 
 @media only screen and (min-width: 580px) and (max-width: 949px) {
-     
-    main {
-        display: block;
-        padding: 10px;
-    }
-    .barra {
-        display: none;
-    }
-    .menu-topo {
-        display: flex;
-        padding: 10px;
-        position: initial;
-    }
+	main {
+		display: block;
+		padding: 10px;
+	}
+	.barra {
+		display: none;
+	}
+	.menu-topo {
+		display: flex;
+		padding: 10px;
+		position: initial;
+	}
 
-    .titulo-topo {
-        text-align: center;
-        width: 80%;
-    }
+	.titulo-topo {
+		text-align: center;
+		width: 80%;
+	}
 
-    .nav-menu {
-        width: 30%;
-        top: 0px;
-    }
-    
-    .ul-menu {
-            font-size: 17px;
-    }
+	.nav-menu {
+		width: 30%;
+		top: 0px;
+	}
 
-    .valor, .transacao {
-        width: 25%;
-        margin: 10px;
-        white-space: nowrap;
-    }
-    .mercadoria {
-        width: 50%;
-        margin: 10px;
-    }
+	.ul-menu {
+		font-size: 17px;
+	}
 
-    .elemento-form {
-        display: flex;
-        overflow: hidden;
-    }
-    
-    .botao-add {
-        float: right;
-    }
+	.valor,
+	.transacao {
+		width: 25%;
+		margin: 10px;
+		white-space: nowrap;
+	}
+	.mercadoria {
+		width: 50%;
+		margin: 10px;
+	}
 
-    .box-dois {
-        margin: 10px;
-        display: block;
-        width: auto;
-    }
+	.elemento-form {
+		display: flex;
+		overflow: hidden;
+	}
+
+	.botao-add {
+		float: right;
+	}
+
+	.box-dois {
+		margin: 10px;
+		display: block;
+		width: auto;
+	}
 }
 
 /*Smartphone*/
 @media only screen and (max-width: 579px) {
+	.nav-menu {
+		width: 50%;
+		top: 0px;
+	}
+	.barra {
+		display: none;
+	}
+	.menu-topo {
+		display: flex;
+		position: initial;
+	}
+	.logo-topo {
+		margin: 10px;
+		align-self: center;
+	}
 
-    
-    .nav-menu {
-        width: 50%;
-        top: 0px;
-    }
-    .barra {
-        display: none;
-    }
-    .menu-topo {
-        display: flex;
-        position: initial;
-    }
-    .logo-topo {
-        margin: 10px;
-        align-self: center;
-    }
+	.titulo-topo {
+		text-align: center;
+		width: 65%;
+		margin: none;
+	}
 
-    .titulo-topo {
-        text-align: center;
-        width: 65%;
-        margin: none;
-    }
-    
-    main {
-        display: block;
-    }
-    label {
-        font-size: 15px;
-    }
-    .box-um {
-        display: flex;
-        flex-direction: column;
-        min-width: 250px;
-        padding: 0px;
-        padding-bottom: 25px;
-        border: none;
-        border-bottom: 1px solid #979797;
-    }
-    .box-dois {
-        margin: 5%;
-        display: block;
-        width: auto;
-    }
+	main {
+		display: block;
+	}
+	label {
+		font-size: 15px;
+	}
+	.box-um {
+		display: flex;
+		flex-direction: column;
+		min-width: 250px;
+		padding: 0px;
+		padding-bottom: 25px;
+		border: none;
+		border-bottom: 1px solid #979797;
+	}
+	.box-dois {
+		margin: 5%;
+		display: block;
+		width: auto;
+	}
 
-    h1, h3 {
-        font-size: 20px;
-    }
+	h1,
+	h3 {
+		font-size: 20px;
+	}
 
-    #valor, #mercadoria, #transacao, #add {
-        padding: 5px;    
-    }
+	#valor,
+	#mercadoria,
+	#transacao,
+	#add {
+		padding: 5px;
+	}
 
-    #tabela {
-        width: 90%;
-    }
+	#tabela {
+		width: 90%;
+	}
 
-    .box-um {
-        width: auto;
-    }
-    
-    #titulo-box-dois {
-        font-size: 29px;
-    }
+	.box-um {
+		width: auto;
+	}
+
+	#titulo-box-dois {
+		font-size: 29px;
+	}
 }
